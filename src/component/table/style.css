@@ -1,0 +1,66 @@
+.table {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .table {
+    width: 100%;
+  }
+}
+.textTop {
+  color: rgb(200, 240, 176);
+  position: absolute;
+  top: 1rem;
+}
+
+.textTop p {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+.textTop p strong {
+  font-size: 3rem;
+}
+
+.quadrado {
+  width: 120px;
+  height: 160px;
+  background: rgba(28, 80, 30, 0.8);
+  margin: 0.5rem 0;
+  color: rgb(55, 148, 1);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+}
+.gameMenu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.imgPlayer {
+  position: absolute;
+  width: 7rem;
+  height: 9.5rem;
+  border-radius: 5px;
+  animation: go-back 0.5s;
+}
+
+@keyframes go-back {
+  from {
+    width: 0rem;
+    height: 0rem;
+  }
+  to {
+    width: 7.5rem;
+    height: 10rem;
+  }
+}

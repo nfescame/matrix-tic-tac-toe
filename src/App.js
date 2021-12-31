@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Router from "./router";
+import { ThemeProvider } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { green, lightGreen } from "@material-ui/core/colors";
 
 function App() {
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: "Noto Serif Display",
+    },
+    spacing: 4,
+    palette: {
+      primary: green,
+      secondary: lightGreen,
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router />;
+    </ThemeProvider>
   );
 }
-
 export default App;
