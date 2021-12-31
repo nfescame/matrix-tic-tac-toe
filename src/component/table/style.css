@@ -97,7 +97,7 @@
     margin: 0;
   }
 }
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 590px) {
   .grid {
     height: 440px;
     padding-top: 4rem;
