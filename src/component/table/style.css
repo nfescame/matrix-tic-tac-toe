@@ -68,6 +68,7 @@
     height: 10rem;
   }
 }
+
 @media only screen and (max-width: 1300px) {
   .table {
     width: 50%;
@@ -94,5 +95,30 @@
   .grid {
     padding-top: 4rem;
     margin: 0;
+  }
+}
+@media only screen and (max-height: 500px) {
+  .grid {
+    height: 440px;
+    padding-top: 4rem;
+    margin: 0;
+  }
+  .quadrado {
+    height: 107px;
+  }
+  .imgPlayer {
+    width: 6rem;
+    height: 6.5rem;
+    animation: go-back 0.5s;
+  }
+  @keyframes go-back {
+    from {
+      width: 0rem;
+      height: 0rem;
+    }
+    to {
+      width: 6.5rem;
+      height: 7rem;
+    }
   }
 }

@@ -31,10 +31,16 @@ const useStyles = makeStyles((theme) => ({
     background: "#174419",
     color: "#C8F0B0",
     textAlign: "center",
+    "& h2": {
+      fontSize: "1rem",
+    },
   },
   button: {
     fontSize: "1rem",
     color: "#C8F0B0",
+  },
+  textPerson: {
+    fontSize: 2,
   },
 }));
 
@@ -72,7 +78,9 @@ export default function Modal({ msg, reset, winner, itsATie }) {
           alt='image winner'
         />
       </Card>
-      <DialogTitle id='alert-dialog-title'>{textPerson()}</DialogTitle>
+      <DialogTitle className={classes.textPerson} id='alert-dialog-title'>
+        {textPerson()}
+      </DialogTitle>
       <DialogContent></DialogContent>
       <DialogActions>
         <Button
