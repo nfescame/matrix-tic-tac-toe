@@ -12,11 +12,6 @@
   margin: 1rem;
 }
 
-@media only screen and (max-width: 900px) {
-  .table {
-    width: 100%;
-  }
-}
 .textTop {
   color: rgb(200, 240, 176);
   position: absolute;
@@ -45,11 +40,7 @@
   border-radius: 5px;
   border: none;
 }
-@media only screen and (max-width: 600px) {
-  .quadrado {
-    width: 100px;
-  }
-}
+
 .gameMenu {
   display: flex;
   justify-content: center;
@@ -75,5 +66,33 @@
   to {
     width: 7.5rem;
     height: 10rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .table {
+    width: 50%;
+  }
+  .grid {
+    padding: 0rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .table {
+    width: 100%;
+  }
+  .grid {
+    padding-top: 4rem;
+    margin: 0 10rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .quadrado {
+    width: 100px;
+  }
+  .grid {
+    padding-top: 4rem;
+    margin: 0;
   }
 }

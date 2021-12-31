@@ -17,12 +17,24 @@ import imgTie from "../../../img/matrix-architect.jpg";
 const useStyles = makeStyles((theme) => ({
   containerDialog: {
     background: "rgba(0,0,0,0.7)",
+    display: "flex",
+    justifyContent: "center",
+  },
+  card: {
+    width: "100%",
+    height: "100vh",
+    display: "flex",
   },
   paper: {
     width: "100%",
-    height: "50vh",
-    background: "#001800",
-    color: "#fff",
+    height: "100vh",
+    background: "#174419",
+    color: "#C8F0B0",
+    textAlign: "center",
+  },
+  button: {
+    fontSize: "1rem",
+    color: "#C8F0B0",
   },
 }));
 
@@ -32,6 +44,14 @@ export default function Modal({ msg, reset, winner, itsATie }) {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const textPerson = () => {
+    return !itsATie
+      ? winner > 0
+        ? "I don't believe in fate. Because I don't like the idea of ​​not being able to control my life. -Neo"
+        : "Never send a human to do the work of a machine. -Agent Smith"
+      : "Your life is the sum of the balance of an unbalanced equation inherent in Matrix programming. -Architect";
   };
 
   return (
@@ -45,15 +65,18 @@ export default function Modal({ msg, reset, winner, itsATie }) {
     >
       <DialogTitle id='alert-dialog-title'>{msg}</DialogTitle>
       <DialogContent></DialogContent>
-      <Card>
+      <Card className={classes.card}>
         <CardMedia
           component='img'
           image={!itsATie ? (winner > 0 ? imgNew : imgSmith) : imgTie}
           alt='image winner'
         />
       </Card>
-      <DialogActions className={classes.dialogAction}>
+      <DialogTitle id='alert-dialog-title'>{textPerson()}</DialogTitle>
+      <DialogContent></DialogContent>
+      <DialogActions>
         <Button
+          className={classes.button}
           onClick={() => {
             handleClose();
             reset();
