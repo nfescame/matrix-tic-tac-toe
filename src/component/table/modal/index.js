@@ -12,6 +12,7 @@ import {
 
 import imgNew from "../../../img/newWinner.jpeg";
 import imgSmith from "../../../img/smithWinner.jpg";
+import imgTie from "../../../img/matrix-architect.jpg";
 
 const useStyles = makeStyles((theme) => ({
   containerDialog: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Modal({ msg, reset, winner }) {
+export default function Modal({ msg, reset, winner, itsATie }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
@@ -47,7 +48,7 @@ export default function Modal({ msg, reset, winner }) {
       <Card>
         <CardMedia
           component='img'
-          image={winner > 0 ? imgNew : imgSmith}
+          image={!itsATie ? (winner > 0 ? imgNew : imgSmith) : imgTie}
           alt='image winner'
         />
       </Card>

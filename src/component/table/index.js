@@ -121,7 +121,7 @@ export default function Table() {
   return (
     <Box className='table'>
       <Typography className='textTop'>{changeTopLabel(player)}</Typography>
-      <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid className='grid' container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {Array.from({ length: 9 }).map((_, index) => {
           const key = getKeyFromIndex(index);
           return (
@@ -148,8 +148,7 @@ export default function Table() {
               reset={reset}
             />
           ) : (
-            // <h1>O ganhador é {winner > 0 ? "O" : "X"}</h1>
-            <Modal msg={"A tie"} reset={reset} />
+            <Modal msg={"A tie"} reset={reset} itsATie={itsATie} />
           )}
         </Box>
       ) : null}

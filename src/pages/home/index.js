@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardMedia,
   makeStyles,
@@ -30,17 +29,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     zIndex: 100,
   },
-  myBtn: {
-    color: "#f0f0f0",
-    background: "#001800",
-    border: "1px solid #eeeeee",
-    zIndex: 100,
-    width: "8rem",
-    height: "2rem",
-  },
+
   titleHome: {
     color: "gray",
-    fontSize: "4rem",
+    fontSize: "2.5rem",
     zIndex: 100,
     textAlign: "center",
     fontWeight: "bold",
@@ -53,17 +45,10 @@ export default function Home() {
     <>
       <MatrixRain />
       <Box className={classes.container}>
-        <Card className={classes.cardMedia}>
+        <Card component={Link} to='/game' className={classes.cardMedia}>
           <CardMedia component='img' image={Img} alt='Button play' />
         </Card>
-        <Button
-          component={Link}
-          to='/game'
-          className={classes.myBtn}
-          variant='contained'
-        >
-          Play
-        </Button>
+
         <Typography className={classes.titleHome}>
           <b>Matrix</b> Tic Tac Toe
         </Typography>
